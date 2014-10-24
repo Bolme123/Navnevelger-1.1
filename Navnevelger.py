@@ -18,7 +18,7 @@ Tips:
 
 """
 import sys
-from Tkinter import *
+from tkinter import *
 import random
 from random import shuffle
 
@@ -37,7 +37,7 @@ for line in lines:
 
 random.shuffle(lineWithTickets)
 
-print "." *30
+print("." *30)
 with open('Test3.txt', 'w') as outfile:
     outfile.writelines(lineWithTickets)
 
@@ -45,6 +45,13 @@ with open('Test3.txt', 'w') as outfile:
 def nameLabel():
     nameLabel.configure(text= f.readline())
 
+def deleteFile():
+	f.close()
+	tf = open("Test3.txt", 'w+')
+	tf.truncate()
+	mGui.destroy()
+	
+	
 f = open("Test3.txt", 'r+')
 
 mGui = Tk()
@@ -58,7 +65,9 @@ pickButton.pack()
 
 nameLabel= Label(text="", font=('Arial Black', 32))
 nameLabel.pack()
-raw_input("Slette filen < ")
-f.truncate()
+
+quitButton = Button(text="Avslutt", command=deleteFile)
+quitButton.pack()
+
 
 mGui.mainloop()
