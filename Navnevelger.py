@@ -18,7 +18,7 @@ Tips:
 
 """
 import sys
-from tkinter import *
+from Tkinter import *
 import random
 from random import shuffle
 
@@ -69,5 +69,6 @@ nameLabel.pack()
 quitButton = Button(text="Avslutt", command=deleteFile)
 quitButton.pack()
 
-
+LagetAv= Label(text="Kenneth Bolme Lund", font=('Arial Black', 11))
+LagetAv.pack()
 mGui.mainloop()
